@@ -12,6 +12,7 @@
 		C7CAFFC31F8C1A5B0010165F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7CAFFC11F8C1A5B0010165F /* Main.storyboard */; };
 		C7CAFFC51F8C1A5B0010165F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CAFFC41F8C1A5B0010165F /* Assets.xcassets */; };
 		C7CAFFC81F8C1A5B0010165F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7CAFFC61F8C1A5B0010165F /* LaunchScreen.storyboard */; };
+		C7CAFFD31F8C216A0010165F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CAFFD21F8C216A0010165F /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C7CAFFC41F8C1A5B0010165F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7CAFFC71F8C1A5B0010165F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7CAFFC91F8C1A5B0010165F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7CAFFD21F8C216A0010165F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,39 @@
 		C7CAFFBC1F8C1A5B0010165F /* test */ = {
 			isa = PBXGroup;
 			children = (
+				C7CAFFD11F8C20DD0010165F /* Controllers */,
+				C7CAFFD01F8C20D40010165F /* Models */,
+				C7CAFFCF1F8C20CA0010165F /* Views */,
 				C7CAFFBD1F8C1A5B0010165F /* AppDelegate.swift */,
-				C7CAFFBF1F8C1A5B0010165F /* ViewController.swift */,
-				C7CAFFC11F8C1A5B0010165F /* Main.storyboard */,
 				C7CAFFC41F8C1A5B0010165F /* Assets.xcassets */,
-				C7CAFFC61F8C1A5B0010165F /* LaunchScreen.storyboard */,
 				C7CAFFC91F8C1A5B0010165F /* Info.plist */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		C7CAFFCF1F8C20CA0010165F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7CAFFC11F8C1A5B0010165F /* Main.storyboard */,
+				C7CAFFC61F8C1A5B0010165F /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7CAFFD01F8C20D40010165F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C7CAFFD11F8C20DD0010165F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7CAFFBF1F8C1A5B0010165F /* ViewController.swift */,
+				C7CAFFD21F8C216A0010165F /* LoginViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7CAFFD31F8C216A0010165F /* LoginViewController.swift in Sources */,
 				C7CAFFC01F8C1A5B0010165F /* ViewController.swift in Sources */,
 				C7CAFFBE1F8C1A5B0010165F /* AppDelegate.swift in Sources */,
 			);
@@ -277,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2YJRRFA38M;
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.winner.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2YJRRFA38M;
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.winner.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
