@@ -9,9 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var userData: (login:String,cookie:String)?
+    
+    @IBOutlet weak var user: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        user.text = "User: \(userData?.login)"
         // Do any additional setup after loading the view, typically from a nib.
     }
 
