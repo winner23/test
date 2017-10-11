@@ -12,30 +12,34 @@ import Alamofire
 class ChkUser {
     
     static let instance = ChkUser()
-    var responseString = ""
-    var cookieString = ""
-    
+    let urlForLogin = "http://vps9615.hyperhost.name/login/index"
+    let headres = ["Content-Type":"application/json", "Charset":"UTF-8"]
     private init(){
     }
     
-    func getUser(withName loginName: String, withPassword pass:String) -> Bool {
+    func getUser(loginName: String, pass: String, completion: @escaping (_ respons: String, _ cookieSession: String) ->()) {
         
-        Alamofire.request("http://vps9615.hyperhost.name/login/index", method: .post, parameters: ["username":"\(loginName)", "password":"\(pass)"], encoding: JSONEncoding.default, headers: ["Content-Type":"application/json", "Charset":"UTF-8"])
+        Alamofire.request(urlForLogin, method: .post, parameters: ["username":"\(loginName)", "password":"\(pass)"], encoding: JSONEncoding.default, headers: headres)
             .responseJSON { response in
-                let responsValueJson = response.result.value as! [String:AnyObject]
-                print(responsValueJson)
-                for key in responsValueJson.keys{
-                    guard let value4Key = responsValueJson[key] else {return}
-                    self.responseString = String(describing: value4Key)
+                var responseAsLoginName: String = ""
+                if let responsValueJson = response.result.value as! [String:AnyObject]! {
+                    //print(responsValueJson)
+                    for key in responsValueJson.keys{
+                        guard let value4Key = responsValueJson[key] else {return}
+                        responseAsLoginName = String(describing: value4Key)
+                    }
                 }
-                let responseJson = response.response
-                let cookieRecord = responseJson?.allHeaderFields["Set-Cookie"]
-                guard let cookieRecordStr = cookieRecord else {return}
-                guard let cookieStringField = String(describing: cookieRecordStr).split(separator: ";").first else { return }
-                guard let cookieStringValue = cookieStringField.split(separator: "=").last else { return }
-                self.cookieString = String(cookieStringValue)
+                switch(response.result){
+                case .success(_):
+                    let responseJson = response.response
+                    let cookieRecord = responseJson?.allHeaderFields["Set-Cookie"]
+                    guard let cookieRecordStr = cookieRecord else {return}
+                    guard let cookieStringField = String(describing: cookieRecordStr).split(separator: ";").first else { return }
+                    guard let cookieStringValue = cookieStringField.split(separator: "=").last else { return }
+                    completion(responseAsLoginName, String(cookieStringValue))
+                case .failure(_):
+                    completion(responseAsLoginName, "")
+                }
         }
-        sleep(5)
-        return responseString == loginName
     }
 }

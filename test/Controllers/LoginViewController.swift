@@ -15,7 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     let checkUser = ChkUser.instance
-    
+    var responsLogin: String = ""
+    var cookieLogin: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,11 +30,14 @@ class LoginViewController: UIViewController {
             showWarningMsg("Password can't be empty!")
             return
         }
-        if checkUser.getUser(withName: loginName, withPassword: pass) {
-            self.performSegue(withIdentifier: "granted", sender: checkUser)
-        } else {
-            self.showWarningMsg(checkUser.responseString)
-        }
+        checkUser.getUser(loginName: loginName, pass: pass, completion: {( loginResponse, cookieResponse) in
+            if cookieResponse == "" {
+                self.showWarningMsg(loginResponse)
+            } else {
+                self.performSegue(withIdentifier: "granted", sender: (loginResponse, cookieResponse))
+            }
+        })
+        
     }
         private func showWarningMsg(_ textMsg: String) {
             let alert = UIAlertController(title: "Warning!", message: textMsg, preferredStyle: UIAlertControllerStyle.alert)
@@ -44,7 +48,7 @@ class LoginViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let mainVC = segue.destination as! ViewController
-        let userData = (checkUser.responseString, checkUser.cookieString)
+        let userData = (self.cookieLogin, self.cookieLogin)
         mainVC.userData = userData
     }
 }
