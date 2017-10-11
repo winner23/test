@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		146123654CDD085472E2F09A /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77AB75E97F4827C45A2D88C /* Pods_test.framework */; };
 		C78C6AE71F8CBD96007747AA /* ChkUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C6AE61F8CBD96007747AA /* ChkUser.swift */; };
+		C79394B41F8E9A1900D4EBBD /* EntetiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79394B31F8E9A1900D4EBBD /* EntetiesCollectionViewCell.swift */; };
 		C7CAFFBE1F8C1A5B0010165F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CAFFBD1F8C1A5B0010165F /* AppDelegate.swift */; };
 		C7CAFFC01F8C1A5B0010165F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CAFFBF1F8C1A5B0010165F /* ViewController.swift */; };
 		C7CAFFC31F8C1A5B0010165F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7CAFFC11F8C1A5B0010165F /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		6198E43977ECEFCC3FD63932 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		A77AB75E97F4827C45A2D88C /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78C6AE61F8CBD96007747AA /* ChkUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChkUser.swift; sourceTree = "<group>"; };
+		C79394B31F8E9A1900D4EBBD /* EntetiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntetiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7CAFFBA1F8C1A5B0010165F /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CAFFBD1F8C1A5B0010165F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7CAFFBF1F8C1A5B0010165F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				C7CAFFC11F8C1A5B0010165F /* Main.storyboard */,
 				C7CAFFC61F8C1A5B0010165F /* LaunchScreen.storyboard */,
+				C79394B31F8E9A1900D4EBBD /* EntetiesCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				C78C6AE71F8CBD96007747AA /* ChkUser.swift in Sources */,
 				C7CAFFC01F8C1A5B0010165F /* ViewController.swift in Sources */,
 				C7CAFFBE1F8C1A5B0010165F /* AppDelegate.swift in Sources */,
+				C79394B41F8E9A1900D4EBBD /* EntetiesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

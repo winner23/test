@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let mainVC = segue.destination as! ViewController
-        let userData = (self.cookieLogin, self.cookieLogin)
+        let userData = sender as? (login: String, cookie: String)
         mainVC.userData = userData
     }
 }

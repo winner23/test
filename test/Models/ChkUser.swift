@@ -32,15 +32,14 @@ class ChkUser {
                             responseAsLoginName = String(describing: value4Key)
                         }
                     }
-                    let responseJson = response.response
-                    guard let cookieRecord = responseJson?.allHeaderFields["Set-Cookie"]! else {return}
-                    let cookieRecordStr = cookieRecord as! String
-                    let cookieStringField = String(describing: cookieRecordStr.split(separator: ";").first)
-                    guard let cookieStringValue = cookieStringField.split(separator: "=").last else { return }
-                    
                     if responseAsLoginName != loginName {
                         completion(responseAsLoginName, "")
                     } else {
+                        let responseJson = response.response
+                        guard let cookieRecord = responseJson?.allHeaderFields["Set-Cookie"]! else {return}
+                        let cookieRecordStr = cookieRecord as! String
+                        let cookieStringField = String(describing: cookieRecordStr.split(separator: ";").first)
+                        guard let cookieStringValue = cookieStringField.split(separator: "=").last else { return }
                         completion(responseAsLoginName, String(cookieStringValue))
                     }
                     
