@@ -21,24 +21,30 @@ class ChkUser {
         
         Alamofire.request(urlForLogin, method: .post, parameters: ["username":"\(loginName)", "password":"\(pass)"], encoding: JSONEncoding.default, headers: headres)
             .responseJSON { response in
-                var responseAsLoginName: String = ""
-                if let responsValueJson = response.result.value as! [String:AnyObject]! {
-                    //print(responsValueJson)
-                    for key in responsValueJson.keys{
-                        guard let value4Key = responsValueJson[key] else {return}
-                        responseAsLoginName = String(describing: value4Key)
-                    }
-                }
+                
                 switch(response.result){
                 case .success(_):
+                    var responseAsLoginName: String = ""
+                    if let responsValueJson = response.result.value as! [String:AnyObject]! {
+                        //print(responsValueJson)
+                        for key in responsValueJson.keys{
+                            guard let value4Key = responsValueJson[key] else {return}
+                            responseAsLoginName = String(describing: value4Key)
+                        }
+                    }
                     let responseJson = response.response
                     let cookieRecord = responseJson?.allHeaderFields["Set-Cookie"]
                     guard let cookieRecordStr = cookieRecord else {return}
                     guard let cookieStringField = String(describing: cookieRecordStr).split(separator: ";").first else { return }
                     guard let cookieStringValue = cookieStringField.split(separator: "=").last else { return }
-                    completion(responseAsLoginName, String(cookieStringValue))
+                    if responseAsLoginName != loginName {
+                        completion(responseAsLoginName, "")
+                    } else {
+                        completion(responseAsLoginName, String(cookieStringValue))
+                    }
+                    
                 case .failure(_):
-                    completion(responseAsLoginName, "")
+                    completion("Error", "")
                 }
         }
     }
