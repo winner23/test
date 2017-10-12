@@ -16,6 +16,8 @@
 		C7CAFFC51F8C1A5B0010165F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CAFFC41F8C1A5B0010165F /* Assets.xcassets */; };
 		C7CAFFC81F8C1A5B0010165F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7CAFFC61F8C1A5B0010165F /* LaunchScreen.storyboard */; };
 		C7CAFFD31F8C216A0010165F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CAFFD21F8C216A0010165F /* LoginViewController.swift */; };
+		C7E90B951F8F655A0013133D /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E90B941F8F655A0013133D /* StudentsViewController.swift */; };
+		C7E90B971F8F65F80013133D /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E90B961F8F65F80013133D /* StudentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C7CAFFC71F8C1A5B0010165F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7CAFFC91F8C1A5B0010165F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7CAFFD21F8C216A0010165F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C7E90B941F8F655A0013133D /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
+		C7E90B961F8F65F80013133D /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C78C6AE61F8CBD96007747AA /* ChkUser.swift */,
+				C7E90B961F8F65F80013133D /* StudentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			children = (
 				C7CAFFBF1F8C1A5B0010165F /* ViewController.swift */,
 				C7CAFFD21F8C216A0010165F /* LoginViewController.swift */,
+				C7E90B941F8F655A0013133D /* StudentsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,8 +256,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E90B971F8F65F80013133D /* StudentModel.swift in Sources */,
 				C7CAFFD31F8C216A0010165F /* LoginViewController.swift in Sources */,
 				C78C6AE71F8CBD96007747AA /* ChkUser.swift in Sources */,
+				C7E90B951F8F655A0013133D /* StudentsViewController.swift in Sources */,
 				C7CAFFC01F8C1A5B0010165F /* ViewController.swift in Sources */,
 				C7CAFFBE1F8C1A5B0010165F /* AppDelegate.swift in Sources */,
 				C79394B41F8E9A1900D4EBBD /* EntetiesCollectionViewCell.swift in Sources */,
