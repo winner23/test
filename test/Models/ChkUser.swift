@@ -26,7 +26,7 @@ class ChkUser {
                 case .success(_):
                     var responseAsLoginName: String = ""
                     if let responsValueJson = response.result.value as! [String:AnyObject]! {
-                        //print(responsValueJson)
+                        print(responsValueJson)
                         for key in responsValueJson.keys{
                             guard let value4Key = responsValueJson[key] else {return}
                             responseAsLoginName = String(describing: value4Key)
@@ -40,7 +40,7 @@ class ChkUser {
                         let cookieRecordStr = cookieRecord as! String
                         let cookieStringField = String(describing: cookieRecordStr.split(separator: ";").first)
                         guard let cookieStringValue = cookieStringField.split(separator: "=").last else { return }
-                        completion(responseAsLoginName, String(cookieStringValue))
+                        completion(responseAsLoginName, cookieRecordStr) //String(cookieStringValue))
                     }
                     
                 case .failure(_):
